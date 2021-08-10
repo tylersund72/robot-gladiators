@@ -41,7 +41,8 @@ var fightOrSkip = function() {
         }
     }
     return false;
-}
+};
+
 // fight function (now with parameter for enemy's name)
 var fight = function(enemy) {
     // keep track of who goes first
@@ -125,6 +126,9 @@ var startGame = function () {
 
     // fight each enemy-robot by looping over them and fighting them one at a time
     for (var i = 0; i < enemyInfo.length; i++) {
+        //check player stats
+        console.log(playerInfo);
+
         // if player is still alive, keep fighting
         if (playerInfo.health > 0) {
             // let player know what round they are in, remember that arrays start at 0 so it needs to have 1 added to it
@@ -273,11 +277,6 @@ var enemyInfo = [
         attack: randomNumber(10, 14)
     }
 ];
-
-console.log(enemyInfo);
-console.log(enemyInfo[0]);
-console.log(enemyInfo[0].name);
-console.log(enemyInfo[0]['attack']);
 
 // start the game when the page loads
 startGame();
